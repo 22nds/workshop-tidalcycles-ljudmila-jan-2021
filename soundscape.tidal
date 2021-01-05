@@ -1,0 +1,345 @@
+-- Workshop: Soundscaping
+
+-- Ljudmila, 5 January 2021
+
+-- 1. Intro (Soundscaping, TidalCycles)
+-- 2. MANI video 
+--    https://github.com/22nds/MANI
+--    https://vimeo.com/427279482
+-- 3. Code and samples - https://github.com/22nds/workshop-tidalcycles-ljudmila-jan-2021
+-- 4. Recording sounds 
+-- 5. Editing sounds in Audacity and creating samples
+-- 6. Supercollider Setup
+-- 7. How to use TidalCycles
+-- 8. Resources
+-- If time: TidalCycles Cheat Sheet https://docs.google.com/spreadsheets/d/1yVCrMT2v1IH8JjUI2vK8bhmz2HGCw8yIOrTZEpCzumI/edit?usp=sharing
+-- If time: Review MANI CODE
+------------------------------------------------------------------------
+tidal_version
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-- SAMPLES
+
+-- A selecion of DEFAULT SuperDirt samples
+------------------------------------------------------------------------
+-- flick sid can metal future gabba sn mouth co gretsch mt arp h cp
+-- cr newnotes bass hc tabla bass0 hh bass1 bass2 oc bass3 ho odx
+-- diphone2 house off ht tink perc bd industrial pluck trump printshort
+-- jazz voodoo birds3 procshort blip drum jvbass psr wobble drumtraks koy
+-- rave bottle kurt latibro rm sax lighter lt arpy feel less stab ul
+
+-- PLAY A SEQUENCE
+-- d1 .. d16:  Tidal provides 16 'connections' to the SuperDirt synthesiser, named from d1 to d16
+d1 $ sound "bass3"
+d1 $ s "bass3"
+
+-- SILENCE
+-- Hush or Ctrl + Alt + H
+hush
+d1 silence
+
+-- ~ rest (silence)
+d1 $ s "~"
+
+
+------------------------------------------------------------------------
+-- SOUNDSCAPING SAMPLES OVERVIEW
+-- Shift + Enter to play one by one
+------------------------------------------------------------------------
+once $ s "air:0"
+once $ s "air:1"
+once $ s "dog"
+once $ s "doors:0"
+once $ s "doors:1"
+once $ s "doors:2"
+once $ s "hammer"
+once $ s "metal"
+once $ s "runner:0"
+once $ s "runner:1"
+once $ s "runner:2"
+once $ s "sbahn"
+once $ s "signal"
+once $ s "stairs:0"
+once $ s "stairs:1"
+once $ s "stairs:2"
+once $ s "stairs:3"
+once $ s "steps"
+once $ s "talk:0"
+once $ s "talk:1"
+once $ s "talk:2"
+
+------------------------------------------------------------------------
+-- SOUNDSCAPE Short samples
+------------------------------------------------------------------------
+-- air air:1 dog doors doors:1 doors:2 hammer metal 
+-- runner runner:1 runner:2 sbahn signal
+-- stairs stairs:1 stairs:2 stairs:3 talk talk:1 talk:2
+d2 $ s "metal metal metal metal ~ hammer hammer"
+d2 $ silence
+
+hush
+
+-- PATTERNS
+-- !x |  !2 == ! repeat sample x times
+-- Shorten:  
+d1 $ s "metal metal metal metal ~ hammer hammer"
+d2 $ s "metal!4 ~ hammer!" 
+
+-- subsequence []
+d2 $ s "[metal!4] ~ hammer!"
+
+-- * -- repeat the sample in the subsequence
+-- Shorten: 
+d1 $ s "[metal!4] ~ hammer!"
+d2 $ s "metal*4 ~ hammer!" 
+
+-- ? randomly played - 50% chance
+d2 $ s "hammer*8"
+d2 $ s "hammer*8?"
+
+------------------------------------------------------------------------
+-- ORDER of the pattern
+------------------------------------------------------------------------
+-- original
+d3 $ s "metal hammer signal dog"
+
+-- rev -- reverse pattern
+------------------------------------------------------------------------
+d3 $ rev $ s "metal hammer signal dog"
+
+-- palindorme -- plays the sample forwards and then backwards 
+------------------------------------------------------------------------
+d3 $ palindrome $ s "metal hammer signal dog"
+
+------------------------------------------------------------------------
+-- SOUNDSCAPE Long samples
+------------------------------------------------------------------------
+-- air air:1 doors talk sbahn
+d4 $ s "doors" 
+
+-- speed -- affects the speed of playback
+------------------------------------------------------------------------
+d4 $ s "doors ~" # speed 0.2
+
+-- cut - You can use cut to truncate the sample when the next one is triggered
+------------------------------------------------------------------------
+d4 $ s "doors ~" # cut 1 # speed 0.2
+
+-- legato - truncates samples, but using a fixed length
+------------------------------------------------------------------------
+d4 $ s "doors ~" # legato 1 # speed 0.2
+d4 $ s "doors ~" # legato 1 # speed 2
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-- TEMPO
+------------------------------------------------------------------------
+-- CPS = Cycles per second
+-- BPM = Beats per minute
+-- By default CPS it is set to 0.5625 (or 135 BPM).
+------------------------------------------------------------------------
+setcps 1  -- 1 cycle per second = 60 bpm
+setcps(60/60) -- 1 cps  (bpm / seconds per minute)
+
+d5 $ s "signal"
+
+
+-- 4 beats at 60bpm
+setcps(60/60/4) -- 1 cps
+d5 $ s "signal*4"
+
+
+-- Queen - We will rock you
+setcps (81/60/4) -- 81bpm 4 beats
+d5 $ sound "kick ~ kick ~ clap ~ ~ ~ kick ~ kick ~ clap ~ ~ ~"
+
+------------------------------------------------------------------------
+-- EFFECTS
+------------------------------------------------------------------------
+
+-- gain - turns a number pattern into a control pattern that specifies volume. 
+-- Values less than 1 make the sound quieter. Values greater than 1 make the sound louder. 
+-- irand - generates (pseudo-)random integers between 0 to n-1 inclusive
+------------------------------------------------------------------------
+d6 $ sound "hammer*8" # gain 1
+d6 $ sound "hammer*8" # gain 2
+d6 $ sound "hammer*8" # gain (irand 2)
+
+
+-- delay - the level of the initial delay signal. A value of 1 means the first echo will be as loud as the original sound. 
+-- delaytime - changes the length of the delay effect. 
+-- delayfb (or delayfeedback) - changes the feedback level of the delay effect
+-- orbit is used to separate out audio channels. 
+------------------------------------------------------------------------
+d6 $ sound "hammer*8" # delay 0.4 # delaytime 0.2 # delayfb 0.9 # gain 0.7 # orbit 6
+
+-- reverb
+-- room controls how much of the audio signal is sent into the reverb effect.
+-- size controls reverb room decay time.
+-- orbit is used to separate out audio channels. 
+------------------------------------------------------------------------
+d6 $ sound "hammer*8" # room 0.7 # size 0.9 # gain 0.7 # orbit 6
+
+-- pan - to create stereo effects - 0 = left, 0.5 = middle, 1 = right 
+-- You can use continuous patterns: sine, cosine, tri, saw, square and rand or range
+------------------------------------------------------------------------
+d6 $ sound "hammer*8" # pan sine
+d6 $ sound "hammer*8" # pan tri
+d6 $ sound "hammer*8" # pan square
+d6 $ sound "hammer*8" # pan rand
+d6 $ sound "hammer*8" # pan (range 0.1 0.5 rand)
+d6 $ sound "hammer*8" # pan (range 0.5 0.9 rand)
+
+------------------------------------------------------------------------
+-- lpf - Low pass filter
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # lpf 1000
+d6 $ s "hammer*8" # delay 0.4 # room 0.7 # gain 0.7 # lpf 1000
+
+------------------------------------------------------------------------
+-- INPUT OPTIONS
+------------------------------------------------------------------------
+-- original
+------------------------------------------------------------------------
+d6 $ s "hammer*8"  # lpf "100 500 1000 2000"
+
+--- < one step per cycle > 
+------------------------------------------------------------------------
+d6 $ s "hammer*8"  # lpf "<100 500 1000 2000>"
+
+-- or "[ 1 | 2 | 3 ]" -- pick one at random for the whole cycle
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # lpf "[100 | 500 | 1000 | 2000]" 
+
+-- choose - emits a stream of randomly choosen values from the given list
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # lpf (choose[100, 500, 1000, 2000]) 
+
+-- range
+-- perlin (produces 1D Perlin (smooth) noise)
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # lpf (range 100 500 saw)
+d6 $ s "hammer*8" # delay 0.4 # room 0.7 # gain 0.7 # lpf (range 100 5000 perlin) * 2
+
+------------------------------------------------------------------------
+-- EFFECTS continued...
+------------------------------------------------------------------------
+
+-- lpq -- resonance of low pass filter
+-- lpq turns a number pattern into a control pattern that sets the resonance of a low pass filter. Values range from 0 to 1.
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # lpf "400" # lpq "0 0.2 0.4 0.6"
+
+-- hpf - high pass filter
+-- hpf turns a number pattern into a control pattern that sets the cutoff frequency of a high pass filter. In SuperDirt, this is in Hz (try a range between 0 and 10000)
+------------------------------------------------------------------------
+d6 $ s "hammer*8" # hpf "100 1000 2000 5000"
+
+-- hpq - resonance of high pass filter. Values range from 0 to 1.
+------------------------------------------------------------------------
+d6 $ s "hammer*8" 
+d6 $ s "hammer*8" # hpf "1000"
+d6 $ s "hammer*8" # hpf "1000" # hpq "0 0.2 0.4 0.6"
+d6 $ s "hammer*8" # hpf "100 1000 2000 5000" # hpq "0 0.2 0.4 0.6"
+d6 $ s "hammer*8" # hpf (choose[100, 1000, 2000, 5000]) # hpq (choose[ 0, 0.2, 0.4, 0.6 ])
+
+------------------------------------------------------------------------
+-- TRANSFORMATIONS
+------------------------------------------------------------------------
+-- original
+------------------------------------------------------------------------
+d7 $ sound "stairs stairs:1 stairs:2 stairs:3"
+
+-- slow -- stretches the pattern over more cycles
+------------------------------------------------------------------------
+d7 $ slow 2 $ sound "stairs stairs:1 stairs:2 stairs:3"
+
+-- fast -- squashes the pattern into less than one cycle 
+------------------------------------------------------------------------
+d7 $ fast 2 $ sound "stairs stairs:1 stairs:2 stairs:3"
+
+-- speed - sets the playback speed of a sample where 1 means normal speed. It changes pitch for samples. 
+-- Negative numbers will cause the sample to be played backwards. 
+------------------------------------------------------------------------
+d7 $ s "hammer:4"
+d7 $ speed "1 2 -4" # s "hammer:4"
+
+-- loopAt - fits samples to a set number of cycles
+------------------------------------------------------------------------
+d7 $ s "sbahn"
+d7 $ loopAt 2 $ s "sbahn"
+d7 $ loopAt 8 $ s "sbahn"
+d7 $ loopAt 32 $ s "sbahn"
+d7 $ loopAt 0.4 $ s "sbahn"
+
+-- every - schedule transformations or effects in different cycles e.g. every fourth cycle, play twice as fast
+------------------------------------------------------------------------
+d7 $ every 2 (fast 2) $ s "metal hammer signal dog"
+
+-- sometimesBy  - determins the likelihood how often another function will be applied. 
+-- sometimesBy 0.9 will be applied in 90% of the cases.
+-- Variants: always (100%), almostAlways (90%), often (75%), sometimes (50%), rarely (25%), almostNever (10%), never (0%)
+------------------------------------------------------------------------
+d7 $ sometimesBy 0.9 (fast 2) $ s "metal hammer signal dog"
+
+-- xfadeIn - Fades in sound over x cycles
+------------------------------------------------------------------------
+xfadeIn 7 2 $ s "metal hammer signal dog"
+xfadeIn 7 2 $ silence
+
+
+-- clutchIn - randomly removes events from the current pattern and slowly adds back in missing events from the next one. 
+------------------------------------------------------------------------
+clutchIn 7 2 $ s "metal hammer signal dog"
+clutchIn 7 2 $ silence
+
+
+-- interpolateIn - Morph control values between patterns in a given number of cycles. 
+------------------------------------------------------------------------
+d1 $ s "bass3*16" # room 0
+interpolateIn 1 4 $ s "bass3*16" # room 1
+
+d1 $ s "bass3*16" # pan 0
+interpolateIn 1 4 $ s "bass3*16" # pan 1
+
+------------------------------------------------------------------------
+-- Experiments
+------------------------------------------------------------------------
+d1 $ loopAt 2 $ s "hammer" # delay 0.2 # room 0.4  # gain 4 # lpf 200-400
+d1 $ s "stairs ~ ~ stairs! ~" # delay 1 # room 1  # gain 2 # lpf 300-700
+d1 $ s "sbahn*8" # delay 0.4 # room 0.7 # gain 0.7 # lpf "100 500 1000 2000" # lpq "0 0.2 0.4 0.6" 
+d1 $ every 8 ( slow 2) $ s "hammer*8" # delay 0.4 # room 0.7 # gain 0.7 # lpf "100 500 1000 2000" # lpq "0 0.2 0.4 0.6"
+d1 $ every 16 (fast 2) $ every 14 (rev) $ s "hammer*16" # hpf "100 1000 2000 5000" # hpq "0 0.2 0.4 0.6"
+
+d1 $ silence
+
+-------------------------------------------------------------------
+
+hush
+
+resetcycles
+setcps(135/60/4)
+
+xfadeIn 1 8 $ s "doors" # speed 0.1 # lpf "500" # lpq "0.3" # pan (range 0.2 0.4 perlin)
+
+xfadeIn 2 16 $ s "air*8?" # pan (range 0.6 0.9 perlin) # gain 0.3
+
+xfadeIn 3 4 $ every 8 ( slow 2) $ s "hammer*8" # delay 0.4 # room 0.7 # gain 0.4 # lpf (choose[100, 500, 1000, 2000]) # lpq "0 0.2 0.4 0.6" # orbit 3
+
+xfadeIn 4 4 $ hurry "<2 [1 0.5]>" $ s "signal!2 ~ ~" # speed 0.5
+
+
+xfadeIn 1 4 $ silence
+xfadeIn 2 4 $ silence
+xfadeIn 3 4 $ silence
+xfadeIn 4 4 $ silence
+
+---------------------------------------------------------------------
+setcps (80/60/4
+setcps (135/60/4)
+d1 $ s "steps*8?" # lpf (choose[100, 500, 2000, 5000]) # gain 1.5
+d2 $ s "metal!4" # lpf 2000 # speed 0.1 # gain 1.2
+
+xfadeIn 1 2 $ silence
+xfadeIn 2 2 $ silence
