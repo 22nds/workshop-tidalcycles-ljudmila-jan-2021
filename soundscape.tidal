@@ -4,7 +4,7 @@
 -- January 6 2021
 -- 22nds live from Berlin
 
--- Organized by Ljudmila
+-- Organized by [Ljudmila](http://ljudmila.org)
 
 -- Code and samples:  https://github.com/22nds/workshop-tidalcycles-ljudmila-jan-2021
 ------------------------------------------------------------------------
@@ -28,14 +28,13 @@ tidal_version
 d1 $ sound "bass3"
 d1 $ s "bass3"
 
+-- ~ rest (silence)
+d1 $ s "~"
+
 -- SILENCE
 -- Hush or Ctrl + Alt + H
 hush
 d1 silence
-
--- ~ rest (silence)
-d1 $ s "~"
-
 
 ------------------------------------------------------------------------
 -- SOUNDSCAPING SAMPLES OVERVIEW
@@ -77,7 +76,8 @@ hush
 -- PATTERNS
 -- !x |  !2 == ! repeat sample x times
 -- Shorten:  
-d1 $ s "metal metal metal metal ~ hammer hammer"
+d2 $ s "metal metal metal metal ~ hammer hammer"
+-- to
 d2 $ s "metal!4 ~ hammer!" 
 
 -- subsequence []
@@ -85,7 +85,8 @@ d2 $ s "[metal!4] ~ hammer!"
 
 -- * -- repeat the sample in the subsequence
 -- Shorten: 
-d1 $ s "[metal!4] ~ hammer!"
+d2 $ s "[metal!4] ~ hammer!"
+-- to
 d2 $ s "metal*4 ~ hammer!" 
 
 -- ? randomly played - 50% chance
@@ -158,7 +159,7 @@ d5 $ sound "kick ~ kick ~ clap ~ ~ ~ kick ~ kick ~ clap ~ ~ ~"
 ------------------------------------------------------------------------
 d6 $ sound "hammer*8" # gain 1
 d6 $ sound "hammer*8" # gain 2
-d6 $ sound "hammer*8" # gain (irand 2)
+d6 $ sound "hammer*8" # gain (irand 2)  -- 0 1 
 
 
 -- delay - the level of the initial delay signal. A value of 1 means the first echo will be as loud as the original sound. 
@@ -337,3 +338,7 @@ d2 $ s "metal!4" # lpf 2000 # speed 0.1 # gain 1.2
 
 xfadeIn 1 2 $ silence
 xfadeIn 2 2 $ silence
+
+---------------------------------------------------------------------
+
+once $ s "talk:2"

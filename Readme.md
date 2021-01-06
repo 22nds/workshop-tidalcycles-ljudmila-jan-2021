@@ -1,14 +1,21 @@
+# Workshop: Soundscaping with TidalCycles
+
+January 6 2021
+22nds live from Berlin
+
+Organized by [Ljudmila](http://ljudmila.org)
+
 ## 0. Installation
 - **Tidal Bootstrap on Mac OS X and Linux Debian**: [https://github.com/tidalcycles/tidal-bootstrap](https://github.com/tidalcycles/tidal-bootstrap)
 - **Installing SuperCollider on Linux by Luka Princic**: [https://lukaprincic.si/development-log/installing-supercollider-on-linux-in-2019](https://lukaprincic.si/development-log/installing-supercollider-on-linux-in-2019)
 
 Or install one by one:
-- **SuperCollider** [https://supercollider.github.io/](https://supercollider.github.io/)
-- **SC3 plugins** [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
-- **Quarks** [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
-- **Vowel Quark** [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
+- **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
+- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
+- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
+- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
 - **SuperDirt** (Tidal's Audio engine) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
-- **SuperDirt startup file fro SuperCollider** [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
+- **SuperDirt startup file in SuperCollider** [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
 - **Haskel** [https://www.haskell.org/](https://www.haskell.org/)
 - **TidalCycles** [https://tidalcycles.org](https://tidalcycles.org)
 - **Code editors**:
@@ -21,7 +28,7 @@ Or install one by one:
 ## 1. Intro 
 - About Workshop
 - [TidalCycles Course](https://blog.tidalcycles.org/shop/) by Alex McLean
-## 2. MANI short film 
+## 2. MANI short film by Eili Bråstad Johannessen
 - Code: [https://github.com/22nds/MANI](https://github.com/22nds/MANI)
 - Video: [https://vimeo.com/427279482](https://vimeo.com/427279482)
 ## 3. Soundscaping
