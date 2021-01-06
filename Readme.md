@@ -36,12 +36,12 @@ Or install one by one:
 - Soundscapes in cities are so noisy
 - [Soundscapes from ljubljana](http://www.soundsofchanges.eu/?s=ljubljana)
 ## 4. Recording sounds 
-	- **Nico, 1988** screenshot
-	- Audiorecorder (Zoom H4N Pro) or mobile phone or laptop microphone
-	- Headphones
-	- Windscreen - blocks wind sound
-	- Tripod
-	- Time and patience, gloves in the winter
+- **Nico, 1988** screenshot
+- Audiorecorder (Zoom H4N Pro) or mobile phone or laptop microphone
+- Headphones
+- Windscreen - blocks wind sound
+- Tripod
+- Time and patience, gloves in the winter
 ## 5. Editing sounds in Audacity and creating samples
 - **Audacity**: [https://www.audacityteam.org/](https://www.audacityteam.org/)
 - Samples created by Niklas Reppel at Scratch Session (on-the-fly) Toplap Barcelona: [https://www.youtube.com/watch?v=wcXfv2lmPog](https://www.youtube.com/watch?v=wcXfv2lmPog) (Starts at 2:23:20)
