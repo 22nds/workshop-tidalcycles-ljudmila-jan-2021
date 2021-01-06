@@ -66,7 +66,7 @@ Or install one by one:
 ## 7. Playing with TidalCycles
 - Get the samples for the workshop on [GitHub](https://github.com/22nds/workshop-tidalcycles-ljudmila-jan-2021) or use your own
 - Start SuperCollider 
-- Add the sample files dierctory to startup (File > Open startup file) file and restart Supercollider
+- Add the sample files dierctory to startup (File > Open startup file) file and restart Supercollider. Example `~dirt.loadSoundFiles("/home/XXX/Desktop/samples/");`
 - Open the code editor
 
 ## 8. TidalCycles Basics
