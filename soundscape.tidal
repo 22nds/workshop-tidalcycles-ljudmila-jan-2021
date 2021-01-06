@@ -1,20 +1,14 @@
--- Workshop: Soundscaping
-
--- Ljudmila, 5 January 2021
-
--- 1. Intro (Soundscaping, TidalCycles)
--- 2. MANI video 
---    https://github.com/22nds/MANI
---    https://vimeo.com/427279482
--- 3. Code and samples - https://github.com/22nds/workshop-tidalcycles-ljudmila-jan-2021
--- 4. Recording sounds 
--- 5. Editing sounds in Audacity and creating samples
--- 6. Supercollider Setup
--- 7. How to use TidalCycles
--- 8. Resources
--- If time: TidalCycles Cheat Sheet https://docs.google.com/spreadsheets/d/1yVCrMT2v1IH8JjUI2vK8bhmz2HGCw8yIOrTZEpCzumI/edit?usp=sharing
--- If time: Review MANI CODE
 ------------------------------------------------------------------------
+-- Workshop: Soundscaping with TidalCycles
+------------------------------------------------------------------------
+-- January 6 2021
+-- 22nds live from Berlin
+
+-- Organized by Ljudmila
+
+-- Code and samples:  https://github.com/22nds/workshop-tidalcycles-ljudmila-jan-2021
+------------------------------------------------------------------------
+
 tidal_version
 
 ------------------------------------------------------------------------
