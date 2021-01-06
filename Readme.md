@@ -7,8 +7,7 @@ Organized by [Ljudmila](http://ljudmila.org)
 
 ## 0. Installation
 - **Tidal Bootstrap on Mac OS X and Linux Debian**: [https://github.com/tidalcycles/tidal-bootstrap](https://github.com/tidalcycles/tidal-bootstrap)
-- **Installing SuperCollider on Linux by Luka Princic**: [https://lukaprincic.si/development-log/installing-supercollider-on-linux-in-2019](https://lukaprincic.si/development-log/installing-supercollider-on-linux-in-2019)
-
+- **Official installaton instructions**: [https://tidalcycles.org/Installation](https://tidalcycles.org/Installation)
 Or install one by one:
 - **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
 - **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
