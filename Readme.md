@@ -34,7 +34,7 @@ Or install one by one:
 ## 3. Soundscaping
 - Environmental aspect - animals recorded, traffic sounds, sound polution
 - Soundscapes in cities are so noisy
-- [Soundscapes from ljubljana](http://www.soundsofchanges.eu/?s=ljubljana)
+- [Soundscapes from Ljubljana](http://www.soundsofchanges.eu/?s=ljubljana)
 ## 4. Recording sounds 
 - **Nico, 1988** screenshot
 - Audiorecorder (Zoom H4N Pro) or mobile phone or laptop microphone

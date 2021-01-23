@@ -32,7 +32,8 @@ d1 $ s "bass3"
 d1 $ s "~"
 
 -- SILENCE
--- Hush or Ctrl + Alt + H
+-- Hush or Ctrl + Alt + H (Linux)
+-- Ctrl + Shift + H (WIN)
 hush
 d1 silence
 
@@ -142,7 +143,7 @@ d5 $ s "signal"
 
 -- 4 beats at 60bpm
 setcps(60/60/4) -- 1 cps
-d5 $ s "signal*4"
+d5 $ s "signal!4"
 
 
 -- Queen - We will rock you
