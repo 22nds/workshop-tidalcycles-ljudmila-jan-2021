@@ -15,8 +15,20 @@ s.options.numInputBusChannels = 2; // set this to your hardware output channel s
 // boot the server and start SuperDirt
 s.waitForBoot {
 	~dirt = SuperDirt(2, s); // two output channels, increase if you want to pan across more channels
-	~dirt.loadSoundFiles("/home/maja/.local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");   // load samples (path containing a wildcard can be passed in)
-	~dirt.loadSoundFiles("/home/maja/Desktop/LIVECODING/sounds_berlin/soundscape/*");
+
+	// CHANGE LOCATION OF SAMPLES IF NEEDED
+	~dirt.loadSoundFiles("~/.local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");   // load samples (path containing a wildcard can be passed in)
+
+	// LINUX
+	~dirt.loadSoundFiles("~/Desktop/LIVECODING/sounds_berlin/soundscape/*");
+
+	// MAC
+	// ~dirt.loadSoundFiles("~/soundscape/*");
+
+	// WIN
+	// ~dirt.loadSoundFiles("C:\\Users\\Ljudmila\\soundscape\\**");
+
+
 	s.sync; // optionally: wait for samples to be read
 
 	~dirt.start(57120, 0 ! 12);   // start listening on port 57120, create two busses each sending audio to channel 0
