@@ -28,7 +28,7 @@ Or install one by one:
 - **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
 	- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
 	- **SuperDirt** (Tidal's Audio engine with synths and samples) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
-		- **SuperDirt startup file in SuperCollider** which will let us use our samples [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
+	- **Supercollider startup file** which will let us use our samples [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd) **NOTE:** make sure your links to the files are correct. On Windows start the samples location with your drive, for example `C:\\` and use backward slashes`\` instead of `/` which are used on Mac and Linux.
 	- Optionally you can also install Quarks and Vowel Quark
 		- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
 		- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
