@@ -6,24 +6,29 @@ January 6 2021
 Organized by [Ljudmila](http://ljudmila.org)
 
 ## 0. Installation
-- **Tidal Bootstrap on Mac OS X and Linux Debian**: [https://github.com/tidalcycles/tidal-bootstrap](https://github.com/tidalcycles/tidal-bootstrap)
 - **Official installaton instructions**: [https://tidalcycles.org/Installation](https://tidalcycles.org/Installation)
+
+For Mac OS X and Linux Debian I recommend to use:
+- **Tidal Bootstrap on Mac OS X and Linux Debian**: [https://github.com/tidalcycles/tidal-bootstrap](https://github.com/tidalcycles/tidal-bootstrap)
+
+
 
 Or install one by one:
 - **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
-- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
-- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
-- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
-- **SuperDirt** (Tidal's Audio engine) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
-- **SuperDirt startup file in SuperCollider** [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
+	- **SuperDirt** (Tidal's Audio engine) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
+		- **SuperDirt startup file in SuperCollider** [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
+	- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
+	- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
+	- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
+	
 - **Haskel** [https://www.haskell.org/](https://www.haskell.org/)
-- **TidalCycles** [https://tidalcycles.org](https://tidalcycles.org)
-- **Code editors**:
+	- **TidalCycles** [https://tidalcycles.org](https://tidalcycles.org)
+
+- **Code editor - Atom OR Visual Studio Code**:
 	- **Atom**: [https://atom.io/](https://atom.io/)
+		- **Atom TydalCycles plugin**: [https://atom.io/packages/tidalcycles](https://atom.io/packages/tidalcycles) or [https://github.com/tidalcycles/atom-tidalcycles](https://github.com/tidalcycles/atom-tidalcycles)
 	- **Visual Studio Code**: [https://code.visualstudio.com/](https://code.visualstudio.com/) 
-- **Code editor plugins/extensions**
-	- **Atom TydalCycles plugin**: [https://atom.io/packages/tidalcycles](https://atom.io/packages/tidalcycles) or [https://github.com/tidalcycles/atom-tidalcycles](https://github.com/tidalcycles/atom-tidalcycles)
-	- **Visual Studio Code TidalCycles extension**: [https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles](https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles) 
+		- **Visual Studio Code TidalCycles extension**: [https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles](https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles) 
 
 ## 1. Intro 
 - About Workshop
