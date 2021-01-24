@@ -14,21 +14,25 @@ For Mac OS X and Linux Debian I recommend to use:
 
 
 Or install one by one:
-- **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
-	- **SuperDirt** (Tidal's Audio engine) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
-		- **SuperDirt startup file in SuperCollider** [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
-	- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
-	- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
-	- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
-	
+- **Git** [https://git-scm.com/downloads](https://git-scm.com/downloads)
+
 - **Haskel** [https://www.haskell.org/](https://www.haskell.org/)
-	- **TidalCycles** [https://tidalcycles.org](https://tidalcycles.org)
+- **TidalCycles** [https://tidalcycles.org](https://tidalcycles.org)
 
 - **Code editor - Atom OR Visual Studio Code**:
 	- **Atom**: [https://atom.io/](https://atom.io/)
 		- **Atom TydalCycles plugin**: [https://atom.io/packages/tidalcycles](https://atom.io/packages/tidalcycles) or [https://github.com/tidalcycles/atom-tidalcycles](https://github.com/tidalcycles/atom-tidalcycles)
 	- **Visual Studio Code**: [https://code.visualstudio.com/](https://code.visualstudio.com/) 
 		- **Visual Studio Code TidalCycles extension**: [https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles](https://marketplace.visualstudio.com/items?itemName=tidalcycles.vscode-tidalcycles) 
+
+- **SuperCollider** (audio synthesis server) [https://supercollider.github.io/](https://supercollider.github.io/)
+	- **SC3 plugins** (for the synths included in SuperDirt) [https://supercollider.github.io/sc3-plugins/](https://supercollider.github.io/sc3-plugins/)
+	- **SuperDirt** (Tidal's Audio engine with synths and samples) [https://github.com/musikinformatik/SuperDirt](https://github.com/musikinformatik/SuperDirt)
+		- **SuperDirt startup file in SuperCollider** which will let us use our samples [https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd](https://github.com/musikinformatik/SuperDirt/blob/develop/superdirt_startup.scd)
+	- Optionally you can also install Quarks and Vowel Quark
+		- **Quarks** (utility that lets you browse the index of community contributed packages and install them) [https://github.com/supercollider-quarks/quarks](https://supercollider.github.io/sc3-plugins/)
+		- **Vowel Quark** (optional) [https://github.com/supercollider-quarks/Vowel](https://supercollider.github.io/sc3-plugins/)
+
 
 ## 1. Intro 
 - About Workshop
